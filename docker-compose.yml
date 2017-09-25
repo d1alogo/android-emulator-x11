@@ -1,0 +1,11 @@
+version: '2'
+services:
+  main:
+    environment:
+        - DISPLAY
+    privileged: true
+    network_mode: "host"
+    image: "d1alogo/android-emulator-x11:ubuntu-xenial"
+    volumes:
+        - "/usr/lib:/usr/lib"
+        - "/tmp/.X11-unix:/tmp/.X11-unix" 
