@@ -5,7 +5,7 @@ services:
         - DISPLAY
     privileged: true
     network_mode: "host"
-    image: "d1alogo/android-emulator-x11:ubuntu-xenial"
+    image: "d1alogo/android-emulator-x11:latest"
     volumes:
         - "/usr/lib:/usr/lib"
         - "/tmp/.X11-unix:/tmp/.X11-unix" 
