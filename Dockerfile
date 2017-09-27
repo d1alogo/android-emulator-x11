@@ -10,7 +10,7 @@ ENV PATH="${PATH}:${ANDROID_SDK_HOME}/tools"
 RUN cd /tmp && \
     curl -O https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz && \
     cd /opt && tar xzf /tmp/*.tgz && rm /tmp/*.tgz
-RUN echo "y" | android update sdk --no-ui --force -a --filter android-25,sys-img-x86_64-google_apis-25
-RUN echo "n" | android create avd --force -n nexus -t android-25 -b google_apis/x86_64
+RUN echo "y" | android update sdk --no-ui --force -a --filter android-25,sys-img-x86-google_apis-25
+RUN echo "n" | android create avd --force -n nexus -t android-25 -b google_apis/x86
 COPY avd/config.ini $ANDROID_HOME/.android/avd/nexus.avd/
 ENTRYPOINT ["emulator64-x86","@nexus"]
