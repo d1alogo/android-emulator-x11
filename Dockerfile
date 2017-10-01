@@ -40,6 +40,9 @@ RUN echo "y" | apt-get install pulseaudio
 ENV PULSE_SERVER /run/pulse/native
 
 
+COPY skins.zip $ANDROID_HOME/
+RUN cd /opt/android-sdk-linux && unzip skins.zip && rm skins.zip 
+
 #run emulator -netdelay none -netspeed full -avd Galaxy_Nexus_API_24
 
 ENTRYPOINT ["emulator","@nexus"]
