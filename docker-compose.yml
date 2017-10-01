@@ -6,6 +6,13 @@ services:
     privileged: true
     network_mode: "host"
     image: "d1alogo/android-emulator-x11:latest"
+    devices:
+        - "/dev/snd"
     volumes:
         - "/usr/lib:/usr/lib"
-        - "/tmp/.X11-unix:/tmp/.X11-unix" 
+        - "/usr/share/X11/xkb"
+        - "/etc/localtime:/etc/localtime"
+        - "/etc/pulse"
+        - "/run/user/${USER_GID}/pulse:/run/pulse:ro"
+        - "/var/run/dbus:/var/run/dbus"
+        - "/tmp/.X11-unix:/tmp/.X11-unix"
