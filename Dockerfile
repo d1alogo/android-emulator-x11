@@ -38,6 +38,6 @@ RUN echo "n" | avdmanager create avd --force -n nexus8  -b google_apis_playstore
 COPY avd8/config.ini $ANDROID_HOME/.android/avd/nexus8.avd/
 
 #run emulator -netdelay none -netspeed full -avd Galaxy_Nexus_API_24
-ENTRYPOINT ["emulator","@nexus7"]
+ENTRYPOINT ["emulator","@nexus8"]
 
 
