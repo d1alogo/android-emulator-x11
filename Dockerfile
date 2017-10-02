@@ -33,9 +33,9 @@ ENV PULSE_SERVER /run/pulse/native
 COPY extra_files/skins.zip $ANDROID_HOME/
 RUN cd /opt/android-sdk-linux && unzip skins.zip && rm skins.zip 
 
-#RUN echo "y" | sdkmanager "system-images;android-26;google_apis_playstore;x86"
-#RUN echo "n" | avdmanager create avd --force -n nexus8  -b google_apis_playstore/x86 -k "system-images;android-26;google_apis_playstore;x86"
-#COPY avd8/config.ini $ANDROID_HOME/.android/avd/nexus8.avd/
+RUN echo "y" | sdkmanager "system-images;android-26;google_apis_playstore;x86"
+RUN echo "n" | avdmanager create avd --force -n nexus8  -b google_apis_playstore/x86 -k "system-images;android-26;google_apis_playstore;x86"
+COPY avd8/config.ini $ANDROID_HOME/.android/avd/nexus8.avd/
 
 #run emulator -netdelay none -netspeed full -avd Galaxy_Nexus_API_24
 ENTRYPOINT ["emulator","@nexus7"]
