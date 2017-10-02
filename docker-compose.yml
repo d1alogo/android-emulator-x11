@@ -5,7 +5,7 @@ services:
         - DISPLAY
     privileged: true
     network_mode: "host"
-    image: "d1alogo/android-emulator-x11:nexusA7"
+    image: "d1alogo/android-emulator-x11:nexusA8"
     devices:
         - "/dev/snd"
     volumes:
