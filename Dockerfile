@@ -41,9 +41,12 @@ RUN echo "y" | sdkmanager "system-images;android-26;google_apis;x86"
 RUN echo "n" | avdmanager create avd --force -n nexus8  -b google_apis/x86 -k "system-images;android-26;google_apis;x86"
 COPY avd8/config.ini $ANDROID_HOME/.android/avd/nexus8.avd/
 
+RUN echo "y" | sdkmanager "system-images;android-27;google_apis;x86"
+RUN echo "n" | avdmanager create avd --force -n nexus8_1  -b google_apis/x86 -k "system-images;android-27;google_apis;x86"
+COPY avd8_1/config.ini $ANDROID_HOME/.android/avd/nexus8_1.avd/
 
 
 #run emulator -netdelay none -netspeed full -avd Galaxy_Nexus_API_24
-ENTRYPOINT ["emulator","@nexus8"]
+ENTRYPOINT ["emulator","@nexus8_1"]
 
 
